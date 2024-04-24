@@ -1,7 +1,11 @@
 function Footer() {
   return (
     <div>
-      Footer
+      Hours: 8am-8pm
+      <div></div>
+      Open: Monday thru Saturday
+      <div></div>
+      Address: 3312 Pastern Court
     </div>
   )
 }

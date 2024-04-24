@@ -1,15 +1,86 @@
-html {
+/* Reset default margin and padding for HTML and body */
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
 }
-body {
-  height: 100%;
-}
+
+/* Set up a flex container for the entire page */
 #root {
   display: flex;
-  height: 100%;
   flex-direction: column;
-  justify-content: center;
+  min-height: 100%;
+  background-image: linear-gradient(to bottom right, #a371ff, #4171c9);
 }
+
+/* Flex item to fill remaining space */
 #page-content {
-  flex-grow: 2;
+  flex-grow: 1;
+}
+
+/* Container for the app content */
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Menu title style */
+.menu-title {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.menu-item {
+  background-image: linear-gradient(to bottom right, #b129ffd9, #13bb86ef);
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-image: linear-gradient(to top left, #ff9900a0, #00d0ff6d);
+}
+
+/* Ensure menu items take full width */
+.menu-items {
+  width: 100%;
+}
+
+/* Grid layout for menu items */
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Style for individual menu items */
+.menu-items {
+  /* Add hover effect to change background color */
+  transition: background-color 0.3s ease;
+}
+
+/* Style for menu item title */
+.menu-items h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+/* Style for menu item details */
+.menu-items p {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .menu-items {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-items {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
