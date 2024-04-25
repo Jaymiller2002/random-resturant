@@ -29,8 +29,7 @@ const App = () => {
   return (
     <div className="app-container">
       <nav className="flex justify-between items-center mb-5">
-        <h1 className="text-3xl font-bold">Menu Page</h1>
-        
+        <h1 className="text-3xl font-bold">Menu Page</h1> 
       </nav>
       {isLoading ? (
         <div>Loading...</div>
