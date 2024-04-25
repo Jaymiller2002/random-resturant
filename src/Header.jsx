@@ -5,9 +5,9 @@ function Header() {
     <div>
       <button><Link to="./">Menu</Link></button>
       <button><Link to="./about">Contact Us</Link></button>
-      <button><Link to="./Signin">Sign-in</Link></button>
-      <button><Link to="./Online">Order Online</Link></button>
-      <button><Link to="./Reservation">Make a rservation</Link></button>
+      <button><Link to="./signin">Sign-in</Link></button>
+      <button><Link to="./online">Order Online</Link></button>
+      <button><Link to="./reservation">Reservation</Link></button>
     </div>
   )
 }

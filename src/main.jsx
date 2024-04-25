@@ -49,15 +49,15 @@ const router = createBrowserRouter([
         element: <About />
       },
       {
-        path: './Online',
+        path: '/online',
         element: <Online />
       },
       {
-        path: './Reservation',
+        path: '/reservation',
         element: <Reservation />
       },
       {
-        path: './Signin',
+        path: '/signin',
         element: <Signin />
       }
     ]
