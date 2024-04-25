@@ -62,21 +62,21 @@ function Online() {
         <div>
           <h3>Chicken Caesar Salad</h3>
           <p>Price: $8.99</p>
-          <button className='text-light' onClick={() => addToCart({ id: 2, name: "Product 3", price: 8.99 })}>
+          <button className='text-light' onClick={() => addToCart({ id: 3, name: "Product 3", price: 8.99 })}>
             Add to Cart
           </button>
         </div>
         <div>
           <h3>Pork Tacos</h3>
           <p>Price: $11.99</p>
-          <button className='text-light' onClick={() => addToCart({ id: 2, name: "Product 4", price: 11.99 })}>
+          <button className='text-light' onClick={() => addToCart({ id: 4, name: "Product 4", price: 11.99 })}>
             Add to Cart
           </button>
         </div>
         <div>
           <h3>Green Curry</h3>
           <p>Price: $13.99</p>
-          <button className='text-light' onClick={() => addToCart({ id: 2, name: "Product 5", price: 13.99 })}>
+          <button className='text-light' onClick={() => addToCart({ id: 5, name: "Product 5", price: 13.99 })}>
             Add to Cart
           </button>
         </div>
