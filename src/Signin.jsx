@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
 function Signin() {
+  // State to hold the username input value
   const [username, setUsername] = useState('');
+  // State to hold the password input value
   const [password, setPassword] = useState('');
+  // State to hold error message for failed sign-in attempts
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Function to handle the sign-in process
   const handleSignIn = () => {
-    // Here you would typically send a request to your backend to authenticate the user
-    // For simplicity, let's just check if the username and password are both 'admin'
+    // Could impliment backend but haven't learned any backend?
+    // Set username and password to JayMiller and Fatpanda76 for simplicity
     if (username === 'JayMiller' && password === 'Fatpanda76') {
       // Successful sign-in
       alert('Sign in successful!');

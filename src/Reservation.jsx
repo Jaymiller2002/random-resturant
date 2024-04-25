@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 function Reservation() {
+    // State to hold the form data for reservation
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -11,15 +12,23 @@ function Reservation() {
         specialRequest: ''
     });
 
+    // Function to handle changes in form inputs
     const handleChange = (e) => {
+        // Extract name and value from the event target
         const {name, value} = e.target;
+        // Update the corresponding field in the form data
         setFormData({...formData, [name]: value});
     }
 
+    // Function to handle form submission 
     const handleSubmit = (e) => {
+        // Prevent the default form submission behavior
         e.preventDefault();
+        // Log the submitted reservation data
         console.log("Reservation Submitted:", formData);
+        // Show an alert indicating successful submission
         alert("Reservation submitted successfully!");
+        // Reset the form data after submission
         setFormData({
             name: '',
             email: '',

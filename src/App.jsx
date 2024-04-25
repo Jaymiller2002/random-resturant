@@ -4,30 +4,34 @@ import './App.css';
 import Image from './assets/foodPic.jpg'
 
 
-
+// Functional component
 const App = () => {
+  // State variables
   const [menu, setMenu] = useState([]); // Hold menu data
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // Loading State
+  const [error, setError] = useState(null); // Error State
 
+  // Effect hook to fetch data when component mounts
   useEffect(() => {
     const fetchMenu = async () => {
       try {
+        // Fetch menu data from the provided API endpoint
         const response = await axios.get('https://raw.githubusercontent.com/bootcamp-students/random-restaurant-json/main/foodList.json');
         console.log('API Response:', response.data); // Log API response for debugging
         setMenu(response.data); // Set menu data
         setError(null); // Reset error state if request succeeds
       } catch (error) {
         console.error('API Error:', error); // Log API error for debugging
-        setError(error);
+        setError(error); // Set error state if request fails
       } finally {
-        setIsLoading(false);
+        setIsLoading(false); // Set loading state to false after request
       }
     };
     
-    fetchMenu();
-  }, []);
+    fetchMenu(); // invoke fetchMenu function
+  }, []); // Empty dependency array ensures this effect runs only once when the component mounts
 
+  // JSX structure for rendering the component
   return (
     <div className="app-container">
       <nav className="flex justify-between items-center mb-5">

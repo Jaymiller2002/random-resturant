@@ -21,21 +21,25 @@ function Online() {
 
   // Function to remove an item from the cart
   const removeFromCart = (productId) => {
+    // Filter out the item with the provided productId from the cart
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
   };
 
   // Function to calculate the total price of items in the cart
   const calculateTotalPrice = () => {
+    // Use reduce to sum up the total price of all items in the cart
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   // Function to place the order
   const placeOrder = () => {
-  // just log the cart items for now
+    // Log the cart items for now
     console.log("Order placed:", cart);
+    // Show an alert indicating the order was placed successfully
     alert("Order placed successfully!");
-    setCart([]); // Clear the cart after placing the order
+    // Clear the cart after placing the order
+    setCart([]); 
   };
 
   return (
