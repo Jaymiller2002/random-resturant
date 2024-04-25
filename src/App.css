@@ -101,6 +101,19 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: transparent;
 }
+
+.card button {
+  margin-top: 10px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 5px;
+}
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .menu-items {

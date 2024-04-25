@@ -32,19 +32,18 @@ function Online() {
 
   // Function to place the order
   const placeOrder = () => {
-    // Here you would typically send a request to your backend with the cart items
-    // For simplicity, let's just log the cart items for now
+  // just log the cart items for now
     console.log("Order placed:", cart);
     alert("Order placed successfully!");
     setCart([]); // Clear the cart after placing the order
   };
 
   return (
-    <div>
+    <div className="center-card">
+        <div className="card">
       <h2>Online Ordering</h2>
       <div>
         {/* Display products */}
-        {/* Example products */}
         <div>
           <h3>Eggs Benedict</h3>
           <p>Price: $9.99</p>
@@ -98,6 +97,7 @@ function Online() {
         <h3>Total Price: ${calculateTotalPrice()}</h3>
         {/* Order button */}
         <button className='text-light' onClick={placeOrder}>Place Order</button>
+      </div>
       </div>
     </div>
   );

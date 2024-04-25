@@ -18,7 +18,8 @@ function Signin() {
   };
 
   return (
-    <div>
+    <div className="center-card">
+        <div className="card">
       <h2>Sign In</h2>
       {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
       <div>
@@ -40,6 +41,7 @@ function Signin() {
         />
       </div>
       <button className="text-light" onClick={handleSignIn}>Sign In</button>
+      </div>
     </div>
   );
 }
