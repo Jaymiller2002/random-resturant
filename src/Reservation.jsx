@@ -30,7 +30,8 @@ function Reservation() {
         });
     };
     return (
-      <div>
+      <div className="center-card">
+        <div className="card">
         <h2>Reservation Form</h2>
         <form onSubmit={handleSubmit}>
             <div>
@@ -101,6 +102,7 @@ function Reservation() {
             </div>
             <button className='text-light' type='submit'>Submit Reservation</button>
         </form>
+        </div>
       </div>
     )
   }
