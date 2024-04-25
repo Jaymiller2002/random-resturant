@@ -10,7 +10,7 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-image: linear-gradient(to bottom right, #a371ff, #4171c9);
+  background-image: linear-gradient(to bottom right, #ad22b1, #4171c9);
 }
 
 /* Flex item to fill remaining space */
@@ -72,6 +72,19 @@ html, body {
   margin-top: 5px;
 }
 
+button {
+  background-color: black;
+  border: 1px solid black;
+}
+
+button:hover {
+  background-color: rgb(59, 198, 168);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .menu-items {

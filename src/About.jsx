@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
 
 function About() {
   return (
-    <div className="p-5">
-      <Link to='/'>{'<- Back'}</Link>
-      <h1>About Page</h1>
+    <div className="p-5 container">
+      <h1>Contact Us</h1>
+      <p>Phone Number: +1 (859) 475-8431</p>
+      <p>Hours: 8am-8pm</p>
+      <div></div>
+      <p>Open: Monday thru Saturday</p>
+      <div></div>
+      <p>Address: 3312 Pastern Court</p>
     </div>
   )
 }
