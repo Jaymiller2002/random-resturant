@@ -79,6 +79,76 @@ function Online() {
             Add to Cart
           </button>
         </div>
+        <div>
+          <h3>Bloody Mary</h3>
+          <p>Price: $7.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 6, name: "Product 6", price: 7.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Shrimp & Grits</h3>
+          <p>Price: $12.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 7, name: "Product 7", price: 12.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Chicken Alfredo</h3>
+          <p>Price: $14.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 8, name: "Product 8", price: 14.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Fish & Chips</h3>
+          <p>Price: $12.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 9, name: "Product 9", price: 12.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Spicy Tuna Roll</h3>
+          <p>Price: $8.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 10, name: "Product 10", price: 8.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Fruit smoothie</h3>
+          <p>Price: $6.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 11, name: "Product 11", price: 6.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Meat Lover's Pizza</h3>
+          <p>Price: $15.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 12, name: "Product 12", price: 15.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Avocado Toast</h3>
+          <p>Price: $10.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 13, name: "Product 13", price: 10.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Chips & Salsa</h3>
+          <p>Price: $5.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 14, name: "Product 14", price: 5.99 })}>
+            Add to Cart
+          </button>
+        </div>
+        <div>
+          <h3>Chicken Teriyaki Bowl</h3>
+          <p>Price: $10.99</p>
+          <button className='text-light' onClick={() => addToCart({ id: 15, name: "Product 15", price: 10.99 })}>
+            Add to Cart
+          </button>
+        </div>
         {/* Display cart */}
         <h3>Cart</h3>
         {cart.length === 0 ? (
