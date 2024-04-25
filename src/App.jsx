@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await axios.get('https://www.jsonkeeper.com/b/MDXW');
+        const response = await axios.get('https://raw.githubusercontent.com/bootcamp-students/random-restaurant-json/main/foodList.json');
         console.log('API Response:', response.data); // Log API response for debugging
         setMenu(response.data); // Set menu data
         setError(null); // Reset error state if request succeeds
