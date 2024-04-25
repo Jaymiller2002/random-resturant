@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import Image from './assets/foodPic.jpg'
+
+
 
 const App = () => {
   const [menu, setMenu] = useState([]); // Hold menu data
@@ -38,6 +41,7 @@ const App = () => {
         <div className="menu-items grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {menu.slice(0, 15).map(item => (
             <div key={item.id} className="menu-item p-4 shadow-md rounded-lg">
+              <img src={Image} alt={item.title} />
               <h3 className="text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-600">Category: {item.category}</p>
               <p className="text-gray-600">Description: {item.description}</p>
