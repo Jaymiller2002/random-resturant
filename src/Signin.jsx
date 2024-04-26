@@ -11,7 +11,7 @@ function Signin() {
   // Function to handle the sign-in process
   const handleSignIn = () => {
     // Could impliment backend but haven't learned any backend?
-    // Set username and password to JayMiller and Fatpanda76 for simplicity
+    // Set username and password to target JayMiller and Fatpanda76 as user & pass for simplicity
     if (username === 'JayMiller' && password === 'Fatpanda76') {
       // Successful sign-in
       alert('Sign in successful!');
@@ -24,10 +24,10 @@ function Signin() {
   return (
     <div className="center-card">
         <div className="card">
-      <h2>Sign In</h2>
+      <h2 style={{color: "white"}}>Sign In</h2>
       {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
       <div>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username" style={{color: "white"}}>Username:</label>
         <input
           type="text"
           id="username"
@@ -36,7 +36,7 @@ function Signin() {
         />
       </div>
       <div>
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password" style={{color: "white"}}>Password:</label>
         <input
           type="password"
           id="password"

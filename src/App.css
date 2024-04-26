@@ -3,6 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  color: white;
 }
 
 /* Set up a flex container for the entire page */
@@ -10,7 +11,10 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
+  /*background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);*/
+  background-image: url(https://i.pinimg.com/564x/6d/88/84/6d8884f3900cc271cf853c72b4de642f.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Flex item to fill remaining space */
@@ -24,6 +28,7 @@ html, body {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  color: white;
 }
 
 /* Menu title style */
@@ -72,12 +77,14 @@ html, body {
 .menu-items h3 {
   font-size: 1.2rem;
   margin-top: 0;
+  color: white;
 }
 
 /* Style for menu item details */
 .menu-items p {
   font-size: 1rem;
   margin-top: 5px;
+  color: white;
 }
 
 button {

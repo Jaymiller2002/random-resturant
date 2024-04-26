@@ -41,10 +41,10 @@ function Reservation() {
     return (
       <div className="center-card">
         <div className="card">
-        <h2>Reservation Form</h2>
+        <h2 style={{color: "white"}}>Reservation Form</h2>
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor='name'>Name: </label>
+                <label htmlFor='name' style={{color: "white"}}>Name: </label>
                 <input 
                   type='text'
                   id='name'
@@ -55,7 +55,7 @@ function Reservation() {
                   />
             </div>
             <div>
-                <label htmlFor='email'>Email: </label>
+                <label htmlFor='email' style={{color: "white"}}>Email: </label>
                 <input
                   type='email'
                   id='email'
@@ -66,7 +66,7 @@ function Reservation() {
                   />
             </div>
             <div>
-                <label htmlFor='date'>Date: </label>
+                <label htmlFor='date' style={{color: "white"}}>Date: </label>
                 <input
                   type='date'
                   id='date'
@@ -77,7 +77,7 @@ function Reservation() {
                   />
             </div>
             <div>
-                <label htmlFor='time'>Time: </label>
+                <label htmlFor='time' style={{color: "white"}}>Time: </label>
                 <input
                   type='time'
                   id='time'
@@ -88,7 +88,7 @@ function Reservation() {
                   />
             </div>
             <div>
-                <label htmlFor='partySize'>PartySize: </label>
+                <label htmlFor='partySize' style={{color: "white"}}>PartySize: </label>
                 <input
                   type='partySize'
                   id='partySize'
@@ -99,7 +99,7 @@ function Reservation() {
                   />
             </div>
             <div>
-                <label htmlFor='specialRequest'>SpecialRequest: </label>
+                <label htmlFor='specialRequest' style={{color: "white"}}>SpecialRequest: </label>
                 <input
                   type='specialRequest'
                   id='specialRequest'
