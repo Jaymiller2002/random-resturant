@@ -7,7 +7,7 @@ function About() {
         <p className="text-lg mb-2">Phone Number: +1 (859) 475-8431</p>
         <p className="text-lg mb-2">Hours: 8am-8pm</p>
         <p className="text-lg mb-2">Open: Monday thru Saturday</p>
-        <p className="text-lg mb-2">Address: 3313 Pastern Court, Lexington, KY 40513</p>
+        <p className="text-lg mb-2">Address: 348 East Main Street, Lexington, KY 40507</p>
       </div>
     </div>
   );
