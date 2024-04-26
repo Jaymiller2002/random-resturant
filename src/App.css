@@ -40,6 +40,8 @@ html, body {
 .menu-item {
   background-image: linear-gradient(to bottom right, #b129ffe4, #13bb86f9);
   border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -93,6 +95,8 @@ html, body {
 button {
   background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
   border: 1px solid #b5b5b5;
+  border-radius: 5px;
+  size: 15px;
 }
 
 button:hover {
