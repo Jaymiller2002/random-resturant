@@ -207,7 +207,7 @@ function Online() {
         ) : (
           <ul>
             {cart.map((item) => (
-              <li key={item.id}>
+              <li style={{color: "white"}} key={item.id}>
                 {item.name} - ${item.price} x {item.quantity}
                 <button className='text-light' onClick={() => removeFromCart(item.id)}>Remove</button>
               </li>

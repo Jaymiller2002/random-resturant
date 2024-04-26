@@ -11,7 +11,7 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  /*background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);*/
+  /*background-image: ;*/
   background-image: url(https://i.pinimg.com/564x/6d/88/84/6d8884f3900cc271cf853c72b4de642f.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,12 +88,12 @@ html, body {
 }
 
 button {
-  background-color: black;
+  background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
   border: 1px solid #727272;
 }
 
 button:hover {
-  background-color: rgba(87,120,255,1);
+  background-image: linear-gradient(90deg, rgb(56, 74, 62) 0%, rgb(39, 55, 117) 35%, rgb(92, 68, 115) 100%);
 }
 
 a {

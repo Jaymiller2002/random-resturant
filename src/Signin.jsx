@@ -25,7 +25,7 @@ function Signin() {
     <div className="center-card">
         <div className="card">
       <h2 style={{color: "white"}}>Sign In</h2>
-      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
+      {errorMessage && <div style={{ color: 'white' }}>{errorMessage}</div>}
       <div>
         <label htmlFor="username" style={{color: "white"}}>Username:</label>
         <input
