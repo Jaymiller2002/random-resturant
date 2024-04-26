@@ -38,13 +38,14 @@ html, body {
 }
 
 .menu-item {
-  background-image: linear-gradient(to bottom right, #b129ffd9, #13bb86ef);
+  background-image: linear-gradient(to bottom right, #b129ffe4, #13bb86f9);
   border: 1px solid black;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item:hover {
-  background-image: linear-gradient(to top left, #ff9900a0, #00d0ff6d);
+  background-image: linear-gradient(to top left, #ff9900e6, #00d0ffdf);
 }
 
 .menu-item img {
@@ -67,11 +68,12 @@ html, body {
   gap: 1rem;
 }
 
-/* Style for individual menu items */
+/* Style for individual menu items 
 .menu-items {
   /* Add hover effect to change background color */
-  transition: background-color 0.3s ease;
-}
+  /*transition: white 0.3s ease;
+}*/
+
 
 /* Style for menu item title */
 .menu-items h3 {
@@ -89,16 +91,16 @@ html, body {
 
 button {
   background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
-  border: 1px solid #727272;
+  border: 1px solid #b5b5b5;
 }
 
 button:hover {
-  background-image: linear-gradient(90deg, rgb(56, 74, 62) 0%, rgb(39, 55, 117) 35%, rgb(92, 68, 115) 100%);
+  background-image: linear-gradient(90deg, rgb(223, 19, 255) 0%, rgb(20, 120, 251) 35%, rgb(49, 236, 96) 100%);
 }
 
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .center-card{
