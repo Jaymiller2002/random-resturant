@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// Links to other pages
 function Header() {
   return (
     <div>

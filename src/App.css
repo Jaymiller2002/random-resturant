@@ -89,6 +89,7 @@ html, body {
   color: white;
 }
 
+/* Button styles */
 button {
   background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
   border: 1px solid #b5b5b5;
@@ -103,6 +104,7 @@ a {
   color: rgb(0, 0, 0);
 }
 
+/* Card styles */
 .center-card{
   display: flex;
   justify-content: center;
@@ -140,12 +142,12 @@ a {
 }
 
 .about-card h1 {
-  color: #333333; /* Dark text color */
+  color: #333333;
 }
 
 .about-card p {
-  color: #ffffff; /* Gray text color */
-  margin-bottom: 10px; /* Add margin between paragraphs */
+  color: #ffffff; 
+  margin-bottom: 10px; 
   text-decoration: underline;
   cursor: pointer;
 }
