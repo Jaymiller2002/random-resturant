@@ -11,10 +11,11 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  /*background-image: ;*/
-  background-image: url(https://i.pinimg.com/564x/6d/88/84/6d8884f3900cc271cf853c72b4de642f.jpg);
+  background-image: url(https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVudSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
 }
 
 /* Flex item to fill remaining space */
@@ -31,29 +32,35 @@ html, body {
   color: white;
 }
 
-/* Menu title style */
-.menu-title {
-  font-size: 1.5rem;
-  margin-top: 0;
-}
-
-.menu-item {
-  background-image: linear-gradient(to bottom right, #b129ffe4, #13bb86f9);
+.card-right {
+  background: linear-gradient(to bottom right, #b129ffe4, #13bb86f9);
   border: 1px solid black;
   border-radius: 5px;
-  background-color: white;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Menu item styles */
+.menu-item {
+  background: linear-gradient(90deg, #a5a5a5e4, #4e4f4ff9);
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  padding: 20px;
 }
 
 .menu-item:hover {
-  background-image: linear-gradient(to top left, #ff9900e6, #00d0ffdf);
+  background: linear-gradient(90deg, #009ebae6, #06ba00df);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
+  box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
 }
 
 .menu-item img {
-  position: relative;
-  top: 180px; /* Adjust this value to move the image down */
-  left: 285px; /* Adjust this value to move the image to the right */
   height: 40px;
   width: 40px;
 }
@@ -61,67 +68,63 @@ html, body {
 /* Ensure menu items take full width */
 .menu-items {
   width: 100%;
-}
-
-/* Grid layout for menu items */
-.menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Adjusted for small screens */
+  align-items: center;
   gap: 1rem;
 }
 
-/* Style for individual menu items 
-.menu-items {
-  /* Add hover effect to change background color */
-  /*transition: white 0.3s ease;
-}*/
-
-
-/* Style for menu item title */
-.menu-items h3 {
+/* Style for menu item title and details */
+.menu-items h3, .menu-items p {
   font-size: 1.2rem;
   margin-top: 0;
-  color: white;
-}
-
-/* Style for menu item details */
-.menu-items p {
-  font-size: 1rem;
-  margin-top: 5px;
-  color: white;
 }
 
 /* Button styles */
 button {
-  background-image: linear-gradient(90deg, rgb(126, 169, 140) 0%, rgba(87,120,255,1) 35%, rgba(204,150,255,1) 100%);
-  border: 1px solid #b5b5b5;
+  background-image: linear-gradient(90deg, rgb(210, 210, 210), rgb(107, 107, 107), rgb(47, 47, 47));
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
+  border: 1px solid #8b8b8b;
   border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 button:hover {
-  background-image: linear-gradient(90deg, rgb(223, 19, 255) 0%, rgb(20, 120, 251) 35%, rgb(49, 236, 96) 100%);
+  background-image: linear-gradient(90deg, #009ebae6, #06ba00df);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
+  box-shadow: 0px 0px 15px 5px rgba(0, 255, 136, 0.75);
+  border: 1px solid #06ba00df;
 }
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 /* Card styles */
-.center-card{
+.center-card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 
-.card{
-  width: 400px;
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%; /* Adjusted for small screens */
+  max-width: 400px; /* Adjusted for small screens */
   padding: 20px;
-  border: 1px transparent #ccc;
+  border: 1px solid #000000;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .card button {
@@ -137,11 +140,12 @@ a {
   margin-bottom: 5px;
 }
 
+/* About card styles */
 .about-card {
-  background-color: #ffffff transparent; /* White background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  padding: 20px; /* Add padding for space around content */
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .about-card h1 {
@@ -155,10 +159,6 @@ a {
   cursor: pointer;
 }
 
-/*img {
-  height: 20px;
-  width: 20px;
-}*/
 /* Media queries for responsiveness */
 @media screen and (max-width: 600px) {
   .menu-items {
@@ -167,6 +167,7 @@ a {
   
   .card {
     width: 90%;
+    max-width: 300px; /* Adjusted for smaller screens */
   }
 }
 

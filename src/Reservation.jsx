@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function Reservation() {
-    // State to hold the form data for reservation
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -11,109 +11,136 @@ function Reservation() {
         partySize: 1,
         specialRequest: ''
     });
+    const [reservations, setReservations] = useState([]);
 
-    // Function to handle changes in form inputs
+    useEffect(() => {
+        // Fetch existing reservations when the component mounts
+        fetchReservations();
+    }, []);
+
+    const fetchReservations = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/reservations/');
+            setReservations(response.data);
+        } catch (error) {
+            console.error('Error fetching reservations:', error);
+            alert("Failed to fetch reservations. Please try again later.");
+        }
+    };
+
     const handleChange = (e) => {
-        // Extract name and value from the event target
-        const {name, value} = e.target;
-        // Update the corresponding field in the form data
-        setFormData({...formData, [name]: value});
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     }
 
-    // Function to handle form submission 
-    const handleSubmit = (e) => {
-        // Prevent the default form submission behavior
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Log the submitted reservation data
-        console.log("Reservation Submitted:", formData);
-        // Show an alert indicating successful submission
-        alert("Reservation submitted successfully!");
-        // Reset the form data after submission
-        setFormData({
-            name: '',
-            email: '',
-            date: '',
-            time: '',
-            partySize: 1,
-            specialRequest: ''
-        });
+        try {
+            await axios.post('http://127.0.0.1:8000/reservations/', formData);
+            alert("Reservation submitted successfully!");
+            setFormData({
+                name: '',
+                email: '',
+                date: '',
+                time: '',
+                partySize: 1,
+                specialRequest: ''
+            });
+            // Refresh reservations after submitting
+            fetchReservations();
+        } catch (error) {
+            console.error('Error submitting reservation:', error);
+            alert("Failed to submit reservation. Please try again later.");
+        }
     };
+
     return (
-      <div className="center-card">
-        <div className="card">
-        <h2 style={{color: "white"}}>Reservation Form</h2>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor='name' style={{color: "white"}}>Name: </label>
-                <input 
-                  type='text'
-                  id='name'
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  />
+        <div className="center-card" style={{ marginTop: '40px' }}>
+            <div className="card">
+                <h2 style={{ color: "white" }}>Reservation Form</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="name" style={{ color: "white" }}>Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="email" style={{ color: "white" }}>Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                      <label htmlFor='date' style={{color: "white"}}>Date:</label>
+                      <input
+                          type="date"
+                          id="date"
+                          name="date"
+                          value={formData.date}
+                          onChange={handleChange}
+                          required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor='time' style={{color: "white"}}>Time:</label>
+                      <input
+                          type="time"
+                          id="time"
+                          name="time"
+                          value={formData.time}
+                          onChange={handleChange}
+                          required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor='partySize' style={{color: "white"}}>PartySize:</label>
+                      <input
+                          type="number"
+                          id="partySize"
+                          name="partySize"
+                          value={formData.partySize}
+                          onChange={handleChange}
+                          required
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor='specialRequest' style={{color: "white"}}>SpecialRequest:</label>
+                      <input
+                          type="text"
+                          id="specialRequest"
+                          name="specialRequest"
+                          value={formData.specialRequest}
+                          onChange={handleChange}
+                          required
+                      />
+                    </div>
+                    <button className="text-light" type="submit">Submit Reservation</button>
+                </form>
             </div>
-            <div>
-                <label htmlFor='email' style={{color: "white"}}>Email: </label>
-                <input
-                  type='email'
-                  id='email'
-                  name='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  />
+            <div className="card">
+                <h2 style={{ color: "white" }}>Existing Reservations</h2>
+                <ul>
+                    {reservations.map(reservation => (
+                        <li key={reservation.id} style={{color: "white"}}>
+                            {/* Display reservation information */}
+                            {reservation.name} - {reservation.email} - {reservation.date} - {reservation.time} - {reservation.partySize} - {reservation.specialRequest}
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <div>
-                <label htmlFor='date' style={{color: "white"}}>Date: </label>
-                <input
-                  type='date'
-                  id='date'
-                  name='date'
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                  />
-            </div>
-            <div>
-                <label htmlFor='time' style={{color: "white"}}>Time: </label>
-                <input
-                  type='time'
-                  id='time'
-                  name='time'
-                  value={formData.time}
-                  onChange={handleChange}
-                  required
-                  />
-            </div>
-            <div>
-                <label htmlFor='partySize' style={{color: "white"}}>PartySize: </label>
-                <input
-                  type='partySize'
-                  id='partySize'
-                  name='partySize'
-                  value={formData.partySize}
-                  onChange={handleChange}
-                  required
-                  />
-            </div>
-            <div>
-                <label htmlFor='specialRequest' style={{color: "white"}}>SpecialRequest: </label>
-                <input
-                  type='specialRequest'
-                  id='specialRequest'
-                  name='specialRequest'
-                  value={formData.specialRequest}
-                  onChange={handleChange}
-                  required
-                  />
-            </div>
-            <button className='text-light' type='submit'>Submit Reservation</button>
-        </form>
         </div>
-      </div>
     )
-  }
-  
-  export default Reservation
+}
+
+export default Reservation;
