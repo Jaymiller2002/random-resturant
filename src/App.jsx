@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Image from './assets/foodPic.jpg';
 
 const App = () => {
   const [menu, setMenu] = useState([]); // Hold menu data

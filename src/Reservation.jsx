@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-
+// PAGE DOES NOT WORK
 function Reservation() {
     const [formData, setFormData] = useState({
         name: '',
@@ -15,18 +15,17 @@ function Reservation() {
 
     useEffect(() => {
         // Fetch existing reservations when the component mounts
-        fetchReservations();
+        (async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/reservations/');
+                setReservations(response.data);
+                console.log(response.data)
+            } catch (error) {
+                console.error('Error fetching reservations:', error);
+                alert("Failed to fetch reservations. Please try again later.");
+            }
+        })();
     }, []);
-
-    const fetchReservations = async () => {
-        try {
-            const response = await axios.get('http://127.0.0.1:8000/reservations/');
-            setReservations(response.data);
-        } catch (error) {
-            console.error('Error fetching reservations:', error);
-            alert("Failed to fetch reservations. Please try again later.");
-        }
-    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,25 +33,49 @@ function Reservation() {
     }
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.post('http://127.0.0.1:8000/reservations/', formData);
-            alert("Reservation submitted successfully!");
-            setFormData({
-                name: '',
-                email: '',
-                date: '',
-                time: '',
-                partySize: 1,
-                specialRequest: ''
-            });
-            // Refresh reservations after submitting
-            fetchReservations();
-        } catch (error) {
-            console.error('Error submitting reservation:', error);
-            alert("Failed to submit reservation. Please try again later.");
-        }
-    };
+      e.preventDefault();
+      try {
+          const reservationData = [
+              {
+                  name: formData.name,
+                  email: formData.email,
+                  date: formData.date,
+                  time: formData.time,
+                  partySize: formData.partySize,
+                  specialRequest: formData.specialRequest
+              }
+          ];
+          
+          const response = await axios.post('http://127.0.0.1:8000/reservations/', reservationData);
+          
+          if (response.status === 201) {
+              alert("Reservation submitted successfully!");
+              setFormData({
+                  name: '',
+                  email: '',
+                  date: '',
+                  time: '',
+                  partySize: 1,
+                  specialRequest: ''
+              });
+              // Refresh reservations after submitting
+              try {
+                  const refreshedResponse = await axios.get('http://127.0.0.1:8000/reservations/');
+                  setReservations(refreshedResponse.data);
+              } catch (error) {
+                  console.error('Error fetching reservations:', error);
+                  alert("Failed to fetch reservations. Please try again later.");
+              }
+          } else {
+              console.error('Reservation submission failed:', response.data);
+              alert("Failed to submit reservation. Please try again later.");
+          }
+      } catch (error) {
+          console.error('Error submitting reservation:', error);
+          alert("Failed to submit reservation. Please try again later.");
+      }
+  };
+  
 
     return (
         <div className="center-card" style={{ marginTop: '40px' }}>
@@ -132,9 +155,9 @@ function Reservation() {
                 <h2 style={{ color: "white" }}>Existing Reservations</h2>
                 <ul>
                     {reservations.map(reservation => (
-                        <li key={reservation.id} style={{color: "white"}}>
+                        <li key={reservation.id} style={{color: "cyan"}}>
                             {/* Display reservation information */}
-                            {reservation.name} - {reservation.email} - {reservation.date} - {reservation.time} - {reservation.partySize} - {reservation.specialRequest}
+                            {reservation.name} | {reservation.email} | {reservation.date} | {reservation.time} | {reservation.party_size} | {reservation.special_request}
                         </li>
                     ))}
                 </ul>
